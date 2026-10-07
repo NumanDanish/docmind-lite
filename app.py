@@ -4,7 +4,18 @@ from rag_engine import get_client, load_chunks, embed_all, search, answer, MAX_P
 st.set_page_config(page_title="DocMind Lite", page_icon="📄")
 st.title("📄 DocMind Lite")
 st.caption("Upload a PDF and ask questions. Answers include page numbers.")
-
+with st.sidebar:
+    st.header("About")
+    st.write(
+        "DocMind Lite uses RAG (Retrieval-Augmented Generation): it finds the most "
+        "relevant parts of your PDF and answers only from them, with page numbers."
+    )
+    st.header("Try asking")
+    st.markdown("- What is this document about?\n- What are the key findings?\n- Explain [a topic] simply")
+    st.header("Limits")
+    st.write(f"Text-based PDFs only, first {MAX_PAGES} pages.")
+    st.warning("Please don't upload private or sensitive documents.")
+    st.caption("Built by Mohammad Numan Danish")
 client = get_client(st.secrets["GEMINI_API_KEY"])
 
 uploaded = st.file_uploader("Upload a PDF", type="pdf")
