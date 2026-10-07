@@ -5,7 +5,7 @@ Ask questions about any PDF and get answers with page numbers, powered by RAG
 
 🔗 **Live demo:** https://docmind-lite-numan.streamlit.app
 
-![DocMind Lite screenshot](assets/screenshot.png)
+![DocMind Lite screenshot](assets/streamlit.png)
 
 ## ✨ Features
 
